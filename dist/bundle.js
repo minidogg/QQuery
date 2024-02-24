@@ -47,7 +47,7 @@ qquery.random.hex = size => [...Array(size)].map(() => Math.floor(Math.random() 
  * @param {number} min - Smallest number the result can be
  * @param {number} max - Biggest number the result can be
  */
-qquery.random.int = (min,max)=>{return Math.floor(Math.random() * (max - min) ) + min;}
+qquery.random.int = (min,max)=>{return Math.floor(Math.random() * (max+1 - min) ) + min;}
 
 /**
  * Returns a random float based on the min and max params.
@@ -62,35 +62,51 @@ qquery.random.float = (min,max)=>{return Math.random() * (max - min)  + min;}
  * @param {number} max - Biggest number the result can be
  */
 qquery.rand = (min,max)=>{
-    Number.isInteger(min)&&Number.isInteger(max)?qquery.random.int(min,max):qquery.random.float(min,max)
+    return Number.isInteger(min)&&Number.isInteger(max)?qquery.random.int(min,max):qquery.random.float(min,max)
 }
 
 //visibility.js
 /**
  * Extends element prototype with a function to make an element hidden
  * @returns {Element} - Returns the element, allowing for chaining of other utils.
+ * @param {ms} - The amount of time before it goes back to the previous state, if this value is 0 the state won't revert.
  */
-Element.prototype.hide = function() {
+Element.prototype.hide = function(ms=0) {
+    let state = this.style.visibility
     this.style.visibility = "hidden";
-    return this
+    try{
+        return this
+    }finally{
+        if(ms>0)setTimeout(()=>{this.style.visibility=state},ms)
+    }
 };
 
 /**
  * Extends element prototype with a function to make an element visible
  * @returns {Element} - Returns the element, allowing for chaining of other utils.
  */
-Element.prototype.show = function() {
+Element.prototype.show = function(ms=0) {
+    let state = this.style.visibility
     this.style.visibility = "visible";
-    return this
+    try{
+        return this
+    }finally{
+        if(ms>0)setTimeout(()=>{this.style.visibility=state},ms)
+    }
 };
 
 /**
  * Extends element prototype with a function to toggle an elements visiblity style.
  * @returns {Element} - Returns the element, allowing for chaining of other utils.
  */
-Element.prototype.toggle = function() {
+Element.prototype.toggle = function(ms=0) {
+    let state = this.style.visibility
     this.style.visibility = this.style.visibility=="visible"?"hidden":"visible"
-    return this
+    try{
+        return this
+    }finally{
+        if(ms>0)setTimeout(()=>{this.style.visibility=state},ms)
+    }
 };
 
 
