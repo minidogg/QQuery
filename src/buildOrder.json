@@ -2,7 +2,7 @@
     "js":[
         "index.js",
         "query.js",
-        "genRanHex.js"
+        "rand.js"
     ],
     "css":[
         "font.css"
