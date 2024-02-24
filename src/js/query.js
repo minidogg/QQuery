@@ -1,7 +1,7 @@
 /**
  * Short hand query selector
  * @param {string} query - The query selector
- * @param {bool} multiple - Whether it should use querySelector or querySelectorAll. Default value is true.
+ * @param {bool} multiple - Whether it should use querySelectorAll or not
  * @param {Element} el - The element to run the query selector on. Default value is the document
  */
 function q(query,multiple=false,el=document){
