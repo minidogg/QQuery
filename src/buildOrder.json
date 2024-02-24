@@ -1,7 +1,10 @@
 {
-    "files":[
+    "js":[
         "index.js",
         "query.js",
         "genRanHex.js"
+    ],
+    "css":[
+        "font.css"
     ]
 }
