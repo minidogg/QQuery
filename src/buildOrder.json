@@ -2,7 +2,8 @@
     "js":[
         "index.js",
         "query.js",
-        "rand.js"
+        "rand.js",
+        "visibility.js"
     ],
     "css":[
         "font.css"

@@ -29,7 +29,7 @@ Element.prototype.q = function(query, multiple = false) {
 
 //rand.js
 /**
- * Random object, contains a bunch of functions related to Math.random() accessible by qquery.random
+ * Random object, contains a bunch of functions related to Math.random() Accessible by qquery.random
  */
 qquery.random = {}
 /**
@@ -60,3 +60,26 @@ qquery.random.float = (min,max)=>{return Math.random() * (max - min)  + min;}
 qquery.rand = (min,max)=>{
     Number.isInteger(min)&&Number.isInteger(max)?qquery.random.int(min,max):qquery.random.float(min,max)
 }
+
+//visibility.js
+/**
+ * Extends element prototype with a function to make an element hidden
+ */
+Element.prototype.hide = function() {
+    this.style.visibility = "hidden";
+};
+
+/**
+ * Extends element prototype with a function to make an element visible
+ */
+Element.prototype.show = function() {
+    this.style.visibility = "visible";
+};
+
+/**
+ * Extends element prototype with a function to toggle an elements visiblity style.
+ */
+Element.prototype.toggle = function() {
+    this.style.visibility = this.style.visibility=="visible"?"hidden":"visible"
+};
+
