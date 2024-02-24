@@ -3,7 +3,8 @@
         "index.js",
         "query.js",
         "rand.js",
-        "visibility.js"
+        "visibility.js",
+        "html.js"
     ],
     "css":[
         "font.css"
