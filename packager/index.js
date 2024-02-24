@@ -28,7 +28,7 @@
 
 
     console.log("Done building bundles!")
-    console.log("Making docs... (if this fails use 'npm install -g documentation')")
-    await nodeCmd.runSync('documentation build ../dist/bundle.js -f html -o ../docs')
-    console.log("Finished creating docs")
+    // console.log("Making docs... (if this fails use 'npm install -g documentation')")
+    // await nodeCmd.runSync('documentation build ../dist/bundle.js -f html -o ../docs')
+    // console.log("Finished creating docs")
 })()
