@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/minidogg/QQuery/issues"
   },
-  "homepage": "https://github.com/minidogg/QQuery#readme"
+  "homepage": "https://github.com/minidogg/QQuery#readme",
+  "devDependencies": {
+    "jsdoc": "^4.0.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  }
 }
