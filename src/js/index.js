@@ -1,5 +1,6 @@
 var qquery = {
-    "config":{
-        
-    }
 }
+/**
+ * QQuery config
+ */
+qquery.config = {}

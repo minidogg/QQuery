@@ -13,7 +13,7 @@
     })
     console.log("Built JS bundle successfuly!")
 
-    fs.writeFileSync("../dist/bundle.js",jsBundle,"utf-8")
+    await fs.writeFileSync("../dist/bundle.js",jsBundle,"utf-8")
 
     console.log("Building CSS bundle")
     var cssBundle = ""
@@ -24,12 +24,11 @@
     })
     console.log("Built CSS bundle successfuly!")
 
-    fs.writeFileSync("../dist/bundle.css",cssBundle,"utf-8")
+    await fs.writeFileSync("../dist/bundle.css",cssBundle,"utf-8")
 
 
     console.log("Done building bundles!")
-
-    console.log("Making docs...")
-    await nodeCmd.runSync('"./node_modules/.bin/jsdoc" "../dist/bundle.js" -d ../docs')
+    console.log("Making docs... (if this fails use 'npm install -g documentation')")
+    await nodeCmd.runSync('documentation build ../dist/bundle.js -f html -o ../docs')
     console.log("Finished creating docs")
 })()
