@@ -1,6 +1,7 @@
 (async ()=>{
     console.log("Getting ready to build...")
     const fs = require("fs")
+    const nodeCmd = require('node-cmd');
     const buildOrder = require("../src/buildOrder.json")
 
     console.log("Building JS bundle")
@@ -27,4 +28,8 @@
 
 
     console.log("Done building bundles!")
+
+    console.log("Making docs...")
+    await nodeCmd.runSync('"./node_modules/.bin/jsdoc" "../dist/bundle.js" -d ../docs')
+    console.log("Finished creating docs")
 })()
