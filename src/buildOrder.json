@@ -4,7 +4,8 @@
         "query.js",
         "rand.js",
         "visibility.js",
-        "shorthand.js"
+        "shorthand.js",
+        "createEl.js"
     ],
     "css":[
         "font.css"
