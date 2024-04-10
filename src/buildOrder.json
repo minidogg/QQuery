@@ -5,7 +5,8 @@
         "rand.js",
         "visibility.js",
         "shorthand.js",
-        "createEl.js"
+        "createEl.js",
+        "sleep.js"
     ],
     "css":[
         "font.css"
