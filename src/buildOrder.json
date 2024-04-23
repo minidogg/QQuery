@@ -6,7 +6,8 @@
         "visibility.js",
         "shorthand.js",
         "createEl.js",
-        "sleep.js"
+        "sleep.js",
+        "array.js"
     ],
     "css":[
         "font.css"
